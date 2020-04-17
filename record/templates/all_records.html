@@ -18,7 +18,7 @@
     {% for drama in dramas%}
         <tr>
             <td>{{ drama.name }}</td>
-            <td><a href="{{ drama.source }}">去看影片</a></td>
+            <td><a href="{{ drama.source }}" target="_blank">去看影片</a></td>
             <td align="center">{{ drama.episode }} / {{ drama.max_episode }}</td>
             <td>{{ drama.timestamp }}</td>
             <td>
