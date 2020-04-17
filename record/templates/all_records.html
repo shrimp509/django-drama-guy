@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
 <h3 align="center">你正在追</h3>
 <div align="center">
     <table border="1">
@@ -23,14 +22,18 @@
             <td align="center">{{ drama.episode }} / {{ drama.max_episode }}</td>
             <td>{{ drama.timestamp }}</td>
             <td>
-                <input type="button" onclick="javascript:location.href='/edit/{{ drama.id }}/'" value="修改"></input>
-                <input type="button" onclick="javascript:location.href='/delete/{{ drama.id }}/'" value="刪除"></input>
+                <form action="/edit/{{ drama.id }}/" method="POST"> {% csrf_token %}
+                    <input type="submit" value="編輯">
+                </form>
+
+                <form action="/delete/{{ drama.id }}/" method="POST"> {% csrf_token %}
+                    <input type="submit" value="刪除">
+                </form>
             </td>
         </tr>
     {% endfor %}
     </table>
 </div>
-
 {% endblock%}
 
 
