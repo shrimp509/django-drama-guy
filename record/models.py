@@ -3,7 +3,7 @@ from django.db.models import CharField, URLField, TimeField, IntegerField
 
 
 class DramaRecord(models.Model):
-    name = CharField()
+    name = CharField(max_length=40)
     source = URLField()
     episode = IntegerField()
     max_episode = IntegerField()
