@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from record.views import add_record
+from record.views import add_record, get_all_records
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('record', add_record),
     path('record/', add_record),
+
+    path('', get_all_records),
 ]

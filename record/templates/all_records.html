@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你的追劇清單</title>
+</head>
+
+<body>
+
+<h1 align="center">你正在追</h1>
+<div align="center">
+    <table border="1">
+        <tr>
+            <td>劇名</td>
+            <td>平台連結</td>
+            <td>現在集數/全部</td>
+            <td>進度</td>
+        </tr>
+    {% for drama in dramas%}
+        <tr>
+            <td>{{ drama.name }}</td>
+            <td><a href="{{ drama.source }}">去看影片</a></td>
+            <td>{{ drama.episode }} / {{ drama.max_episode }}</td>
+            <td>{{ drama.timestamp }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+
+</body>
+
+<footer>
+    <div align="center">
+        <br><br><hr><br>
+        <input type="button" onclick="javascript:location.href='record/'" value="我想追新的劇"></input>
+    </div>
+</footer>
+
+
+</html>

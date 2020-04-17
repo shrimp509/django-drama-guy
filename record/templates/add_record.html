@@ -5,9 +5,18 @@
     <title>Add new drama record</title>
 </head>
 <body>
-    <form method="POST"> {% csrf_token %}
+
+    {% if status != '' %}
+    <h1>{{ status }}</h1>
+    {% else %}
+    <h1 align="center">追一部新的劇</h1>
+    {% endif %}
+    <div align="center">
+        <form method="POST"> {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="送出">
     </form>
+    </div>
+
 </body>
 </html>
