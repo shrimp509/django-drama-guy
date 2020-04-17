@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new drama record</title>
+</head>
+<body>
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="送出">
+    </form>
+</body>
+</html>
