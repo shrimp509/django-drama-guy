@@ -26,8 +26,8 @@ urlpatterns = [
     path('record', add_record),
     path('record/', add_record),
 
-    path('edit', edit_record),
-    path('edit/', edit_record),
+    path('edit/<int:id>', edit_record),
+    path('edit/<int:id>/', edit_record),
 
     path('delete/<int:id>', delete_record),
     path('delete/<int:id>/', delete_record),

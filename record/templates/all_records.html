@@ -22,7 +22,7 @@
             <td align="center">{{ drama.episode }} / {{ drama.max_episode }}</td>
             <td>{{ drama.timestamp }}</td>
             <td>
-                <form action="/edit/{{ drama.id }}/" method="POST"> {% csrf_token %}
+                <form action="/edit/{{ drama.id }}/" method="GET"> {% csrf_token %}
                     <input type="submit" value="編輯">
                 </form>
 
