@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add new drama record</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block header %}
+<title>追一部新的劇 | 追劇仔</title>
+{% endblock %}
+
+{% block content %}
 
     {% if status == 'fail' %}
     <h1 align="center">新增失敗，再試一次</h1>
     {% else %}
-    <h1 align="center">追一部新的劇</h1>
+    <h3 align="center">追一部新的劇</h3>
     {% endif %}
     <div align="center">
         <form method="POST"> {% csrf_token %}
@@ -38,14 +38,13 @@
         <input type="submit" value="送出">
         </form>
     </div>
+{% endblock %}
 
-</body>
-
+{% block footer %}
 <footer>
     <div align="center">
         <br><br><hr><br>
         <input type="button" onclick="javascript:location.href='/'" value="回清單"></input>
     </div>
 </footer>
-
-</html>
+{% endblock %}

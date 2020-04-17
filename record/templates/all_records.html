@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>你的追劇清單</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% block header %}
+    <title>你正在追 | 追劇仔</title>
+{% endblock %}
 
-<h1 align="center">你正在追</h1>
+{% block content %}
+
+<h3 align="center">你正在追</h3>
 <div align="center">
     <table border="1">
         <tr>
@@ -32,14 +31,14 @@
     </table>
 </div>
 
-</body>
+{% endblock%}
 
+
+{% block footer %}
 <footer>
     <div align="center">
         <br><br><hr><br>
         <input type="button" onclick="javascript:location.href='/record/'" value="我想追新的劇"></input>
     </div>
 </footer>
-
-
-</html>
+{% endblock %}
