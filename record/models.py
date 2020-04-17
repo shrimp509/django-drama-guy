@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import CharField, URLField, TimeField, IntegerField
+from django.db.models import CharField, URLField, IntegerField
 
 
 class DramaRecord(models.Model):
@@ -7,7 +7,7 @@ class DramaRecord(models.Model):
     source = URLField()
     episode = IntegerField()
     max_episode = IntegerField()
-    timestamp = TimeField()
+    timestamp = CharField(max_length=8)
 
     def __str__(self):
         return "{}: {}/{} {}".format(self.name, self.episode, self.max_episode, self.timestamp)

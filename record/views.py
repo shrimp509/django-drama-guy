@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.handlers.wsgi import WSGIRequest
 
 from .forms import DramaRecordForm
@@ -12,7 +12,7 @@ def add_record(request: WSGIRequest):
         if form.is_valid():
             form.save()
             # success
-            return render(request, 'add_record.html', {'form': form, 'status': 'success'})
+            return redirect('/')
         else:
             # fail
             return render(request, 'add_record.html', {'form': form, 'status': 'fail'})
