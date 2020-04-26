@@ -15,7 +15,8 @@
             <td align="center"><span style="font-weight:bold">時:分:秒</span></td>
             <td align="center"><span style="font-weight:bold">操作</span></td>
         </tr>
-    {% for drama in dramas%}
+
+        {% for drama in dramas%}
         <tr>
             <td>{{ drama.name }}</td>
             <td><a href="{{ drama.source }}" target="_blank">去看影片</a></td>
@@ -31,7 +32,7 @@
                 </form>
             </td>
         </tr>
-    {% endfor %}
+        {% endfor %}
     </table>
 </div>
 {% endblock%}

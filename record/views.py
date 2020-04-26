@@ -47,10 +47,10 @@ def edit_record(request: WSGIRequest, id: int):
         if form.is_valid():
             for exist in exists:
                 exist.name = form.cleaned_data['name']
-                exist.source = form.cleaned_data['source']
                 exist.episode = form.cleaned_data['episode']
                 exist.max_episode = form.cleaned_data['max_episode']
                 exist.timestamp = form.cleaned_data['timestamp']
+                exist = resolve_source(exist, form)
                 exist.save()
                 return redirect('/')
             return redirect('/edit/{}/'.format(id))
@@ -69,3 +69,9 @@ def delete_record(request: WSGIRequest, id: int):
 
         return redirect('/')
     return redirect('/')
+
+
+def resolve_source(record: DramaRecord, form: DramaRecordForm):
+    source = form.cleaned_data['source']
+    record.source = source
+    return record
